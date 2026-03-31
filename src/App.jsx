@@ -1,13 +1,14 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import { theme } from './styles/theme'
-import Home from './components/Home'
+import Home from './pages/Home'
 import AboutModal from './components/AboutModal'
 import Services from './components/Services'
 import Dashboard from './components/admin/Dashboard'
 
 import { tenantsData } from './store/userData'
 import Clay from './pages/Clay'
+import Router from './Router'
 
 
 // Create the context
@@ -72,7 +73,7 @@ const App = () => {
 
   return (
     <div className={`transition-all w-full h-screen flex flex-col items-center justify-center ${theme.fontFamily}`}>
-      <div className='w-[90%] h-screen bg-white'>
+      <div className='w-[90%] h-screen overflow-x-hidden bg-white'>
         <Data.Provider value={{ 
           isModalOpen, 
           setIsModalOpen, 
@@ -82,14 +83,14 @@ const App = () => {
           setTenants 
         }}>
           <div className='w-[90%] fixed top-0 left-1/2 -translate-x-1/2 backdrop-blur-md bg-white/75 z-50'>
-  <Navbar/>
-</div>
+        <Navbar/>
+      </div>
           
-          <Home />
-          <AboutModal />
+          <Router />
+          {/* <AboutModal /> */}
           {/* <Services /> */}
-          <Dashboard/>
-          <Clay/>
+          {/* <Dashboard/>
+          <Clay/> */}
         </Data.Provider>
       </div>
     </div>
