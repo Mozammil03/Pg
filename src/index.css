@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+    filter: sepia(0.06) saturate(1) hue-rotate(-5deg);
+    background-color: rgb(243 244 248);
+}
