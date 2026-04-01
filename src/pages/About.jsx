@@ -3,7 +3,7 @@ import FounderImg from '../assets/Founder.jpeg';
 import FounderCard from '../utils/FounderCard';
 import AboutModal from '../components/AboutModal';
 import PathGen from '../utils/PathGen';
-import { useState } from 'react';
+
 
 const data = [
     { title: "The Idea (Late 2023)", content: "Faced real challenges while finding PG accommodation, which led to the initial idea of solving this problem." },
@@ -20,7 +20,7 @@ const About = () => {
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex flex-col justify-center h-screen p-4">
-        <div className="max-w-full w-full h-[60%] rounded-2xl object-cover mt-20 overflow-hidden bg-green-300">
+        <div className="max-w-full w-full h-[60%] rounded-2xl object-cover mt-20 overflow-hidden">
           <img
             src={teamImg}
             alt="Team"

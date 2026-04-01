@@ -17,45 +17,6 @@ const Data = createContext();
 
 export const useData = () => useContext(Data);
 
-// const tenantExample = {
-//   "id": 1,
-//   "firstName": "Emily",
-//   "lastName": "Johnson",
-//   "age": 28,
-//   "gender": "female",
-//   "email": "emily.johnson@example.com",
-//   "phone": "+91 965-431-3024",
-//   "image": "https://dummyjson.com/icon/emilys/128",
-//   "bloodGroup": "O+",
-//   "company": {
-//     "name": "TechCorp Solutions",
-//     "title": "Software Engineer"
-//   },
-//   "address": {
-//     "address": "626 Main Street",
-//     "city": "Bangalore",
-//     "state": "Karnataka",
-//     "postalCode": "560034"
-//   },
-//   "emergencyContact": {
-//     "name": "Robert Johnson",
-//     "relation": "Father",
-//     "phone": "+91 9876543210"
-//   },
-//   "pgDetails": {
-//     "room": "201",
-//     "joinDate": "2025-01-15",
-//     "status": "ACTIVE",
-//     "monthlyRent": 7000,
-//     "securityDeposit": 10000,
-//     "dueDate": 5
-//   },
-//   "idProofs": {
-//     "aadhar": "XXXX-XXXX-1234",
-//     "pan": "ABCDE1234F"
-//   }
-// }
-
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -73,7 +34,7 @@ const App = () => {
 
   return (
     <div className={`transition-all w-full h-screen flex flex-col items-center justify-center ${theme.fontFamily}`}>
-      <div className='w-[90%] h-screen overflow-x-hidden bg-white'>
+      <div className='w-[90%] h-screen overflow-x-hidden bg-white transition-all'>
         <Data.Provider value={{ 
           isModalOpen, 
           setIsModalOpen, 
@@ -87,10 +48,6 @@ const App = () => {
       </div>
           
           <Router />
-          {/* <AboutModal /> */}
-          {/* <Services /> */}
-          {/* <Dashboard/>
-          <Clay/> */}
         </Data.Provider>
       </div>
     </div>

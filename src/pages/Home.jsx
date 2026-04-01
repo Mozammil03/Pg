@@ -15,6 +15,17 @@ const Home = () => {
   const openModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const handleClick = (direction, event) => {
+    const container = event.currentTarget.parentNode;
+    const scrollAmount = container.clientWidth;
+
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
   return (
     <>
       <div className=" h-screen w-full gap-2 flex flex-col p-4 items-center">
@@ -157,8 +168,8 @@ const Home = () => {
           </div>
 
           <div className="flex flex-row gap- w-full h-fit">
-            <div className=" h-[2px] w-screen z-1 absolute bg-gray-200 -translate-x-28 translate-y-12"></div>
-            <div className=" h-[2px] w-screen z-1 absolute bg-gray-200 -translate-x-28 translate-y-20"></div>
+            {/* <div className=" h-[2px] w-screen z-1 absolute bg-gray-200 -translate-x-28 translate-y-12"></div>
+            <div className=" h-[2px] w-screen z-1 absolute bg-gray-200 -translate-x-28 translate-y-20"></div> */}
             <div className="z-10 flex gap-28 flex-row place-content-center items-center justify-center w-full">
               <MetriceCard title="Load Reduction " value="70%" />
               <MetriceCard title="Collection Rate" value="98%" />
@@ -186,12 +197,69 @@ const Home = () => {
                 role="PG Owner"
                 content=" The automated payment system is a game-changer, and the tenant management features are incredibly efficient."
               />
-             <TestimonialCard
+              <TestimonialCard
                 profileUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTecWVG03Q76l1-z24nS61GOBn9Rq-7DSkw&s"
                 name="Alice Johnson"
                 role="PG Owner"
                 content="I was skeptical at first, but PG Joe has exceeded my expectations. The room tracking feature has helped me optimize occupancy."
-              />  
+              />
+            </div>
+          </div>
+          <div className="relative">
+            <h1 className="text-5xl p-4 text-gray-900 w-full font-extrabold text-center m-8">Sample Room Card Preview</h1>
+            <div className="flex flex-row gap-4 mt-8 w-full overflow-auto no-scrollbar">
+              <RoomCard
+                room={{
+                  id: 1,
+                  status: "VACANT",
+                  price: 7000,
+                  active: true,
+                  floor: "1st",
+                  occupancy: 1,
+                }}
+              />
+              <RoomCard
+                room={{
+                  id: 2,
+                  status: "VACANT",
+                  price: 7000,
+                  active: true,
+                  floor: "Ground",
+                  occupancy: 1,
+                }}
+              />
+              <RoomCard
+                room={{
+                  id: 3,
+                  status: "VACANT",
+                  price: 5000,
+                  active: true,
+                  floor: "2nd",
+                  occupancy: 1,
+                }}
+              />
+              <RoomCard
+                room={{
+                  id: 3,
+                  status: "VACANT",
+                  price: 5000,
+                  active: true,
+                  floor: "2nd",
+                  occupancy: 1,
+                }}
+              />
+              <button
+                onClick={(e) => handleClick("left", e)}
+                className="text-gray-400 border-[1px] border-gray backdrop-blur-md bg-white/75 z-50 rounded-full p-12 h-20 w-20 text-6xl flex justify-center text-center items-center absolute left-0 top-[50%] -translate-x-8 hover:text-gray-300 transition-all"
+              >
+                &lt;{" "}
+              </button>
+              <button
+                onClick={(e) => handleClick("right", e)}
+                className="text-gray-400 border-[1px] border-gray backdrop-blur-md bg-white/75 z-50 rounded-full p-12 h-20 w-20 text-6xl flex justify-center text-center items-center absolute right-0 top-[50%] translate-x-8 hover:text-gray-300 transition-all"
+              >
+                &gt;
+              </button>
             </div>
           </div>
         </div>

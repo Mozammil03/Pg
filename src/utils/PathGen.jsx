@@ -44,7 +44,7 @@ const PathGen = ({cardDetail, styles}) => {
       </div>
     );
     const cardsR = ({ title, content }) => (
-      <div className="flex flex-col justify-start text-start items-start p-2 max-w-80 max-h-50 translate-x-48 -translate-y-1">
+      <div className="flex flex-col justify-start text-start items-start p-2 max-w-80 max-h-50 text-sm translate-x-48 -translate-y-1">
         <div>{titles(title)}</div>
         <div>{contents(content)}</div>
       </div>
