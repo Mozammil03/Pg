@@ -9,6 +9,7 @@ import Dashboard from './components/admin/Dashboard'
 import { tenantsData } from './store/userData'
 import Clay from './pages/Clay'
 import Router from './Router'
+import Footer from './components/Footer'
 
 
 // Create the context
@@ -33,21 +34,29 @@ const App = () => {
   }, [tenants]);
 
   return (
-    <div className={`transition-all w-full h-screen flex flex-col items-center justify-center ${theme.fontFamily}`}>
-      <div className='w-[90%] h-screen overflow-x-hidden bg-white transition-all'>
-        <Data.Provider value={{ 
-          isModalOpen, 
-          setIsModalOpen, 
-          isRegisterOpen, 
-          setIsRegisterOpen, 
-          tenants, 
-          setTenants 
-        }}>
-          <div className='w-[90%] fixed top-0 left-1/2 -translate-x-1/2 backdrop-blur-md bg-white/75 z-50'>
-        <Navbar/>
-      </div>
-          
-          <Router />
+    <div
+      className={`transition-all w-full min-h-screen flex flex-col ${theme.fontFamily}`}
+    >
+      <div className='flex flex-col justify-center items-center'>
+        <Data.Provider
+          value={{
+            isModalOpen,
+            setIsModalOpen,
+            isRegisterOpen,
+            setIsRegisterOpen,
+            tenants,
+            setTenants,
+          }}
+        >
+          <div className="w-[90%] fixed top-0 left-1/2 -translate-x-1/2 backdrop-blur-md bg-white/75 z-50">
+            <Navbar />
+          </div>
+          <div className="w-[90%] mx-auto flex-grow bg-white">
+            <Router />
+          </div>
+          <div className="w-[90%] flex-grow bg-white p-4">
+            <Footer />
+          </div>
         </Data.Provider>
       </div>
     </div>

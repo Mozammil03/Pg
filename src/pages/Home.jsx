@@ -28,9 +28,9 @@ const Home = () => {
   };
   return (
     <>
-      <div className=" h-screen w-full gap-2 flex flex-col p-4 items-center">
+      <div className=" h-auto w-full gap-2 flex flex-col p-4 items-center">
         {/* <div className='bg-green-300 h-screen w-full'>helo</div> */}
-        <div className="h-screen w-full gap-2 flex flex-row p-4 pt-30 items-center overflow-hidden">
+        <div className="h-screen w-full gap-2 flex flex-row p-4 items-center overflow-hidden">
           <div className="flex flex-col w-1/2 text-left justify-start">
             <h1 className="text-7xl font-bold mb-8">Smarter PG Management</h1>
             <p className="text-lg leading-relaxed text-gray-600">
